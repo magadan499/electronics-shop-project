@@ -15,3 +15,10 @@ def test_apply_discount():
     Item.pay_rate = 0.8
     item1.apply_discount()
     assert item1.price == 80
+
+def test_name():
+    """Тест проверки длины наименования товара (не больше 10 символов)"""
+    item1 = Item("Смартфон", 10000, 20)
+    assert item1.name == "Смартфон"
+    item1.name = "Духовой шкаф"
+    assert item1.name == "Духовой шк"
