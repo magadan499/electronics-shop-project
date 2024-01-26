@@ -17,6 +17,7 @@ def test_apply_discount():
     item1.apply_discount()
     assert item1.price == 80
 
+
 def test_name():
     """Тест проверки длины наименования товара (не больше 10 символов)"""
     item1 = Item("Смартфон", 10000, 20)
@@ -24,10 +25,12 @@ def test_name():
     item1.name = "Духовой шкаф"
     assert item1.name == "Духовой шк"
 
+
 def test_instantiate_from_csv():
     """Проверка добавления экземпляров класса из CSV файла"""
     Item.instantiate_from_csv(ITEMS)
     assert len(Item.all) == 5
+
 
 def test_string_to_number():
     """Проверка возвращения числа из строки-числа"""
