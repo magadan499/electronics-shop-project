@@ -28,3 +28,8 @@ def test_instantiate_from_csv():
     """Проверка добавления экземпляров класса из CSV файла"""
     Item.instantiate_from_csv(ITEMS)
     assert len(Item.all) == 5
+
+def test_string_to_number():
+    """Проверка возвращения числа из строки-числа"""
+    assert Item.string_to_number("5") == 5
+    assert Item.string_to_number("1.5") == 1
