@@ -37,3 +37,9 @@ class Item:
             reader = csv.DictReader(csvfile)
             for row in reader:
                 cls(str(row['name']), float(row['price']), int(row['quantity']))
+
+    @staticmethod
+    def string_to_number(str_number):
+        """Возвращает число из строки-числа"""
+        number = float(str_number)
+        return int(number)
