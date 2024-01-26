@@ -1,6 +1,7 @@
 """Здесь надо написать тесты с использованием pytest для модуля item."""
 import pytest
 from src.item import Item
+from config import ITEMS
 
 
 def test_calculate_total_price():
@@ -22,3 +23,8 @@ def test_name():
     assert item1.name == "Смартфон"
     item1.name = "Духовой шкаф"
     assert item1.name == "Духовой шк"
+
+def test_instantiate_from_csv():
+    """Проверка добавления экземпляров класса из CSV файла"""
+    Item.instantiate_from_csv(ITEMS)
+    assert len(Item.all) == 5
