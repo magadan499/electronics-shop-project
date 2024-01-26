@@ -29,6 +29,18 @@ class Item:
         self.price *= self.pay_rate
         return self.price
 
+    @property
+    def name(self):
+        return self.__name
+
+    @name.setter
+    def name(self, name):
+        """Проверяем, что длина наименования товара не больше 10 символов"""
+        if len(name) > 10:
+            self.__name = name[:10]
+        else:
+            self.__name = name
+
     @classmethod
     def instantiate_from_csv(cls, csv_file):
         """Добавление экземпляров класса из CSV файла"""
