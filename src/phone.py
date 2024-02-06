@@ -21,12 +21,12 @@ class Phone(Item):
         return f"{self.__class__.__name__}('{self.name}', {self.price}, {self.quantity}, {self.__number_of_sim})"
 
     @property
-    def get_sim(self):
+    def number_of_sim(self):
         """Получаем доступ к приватному значению количества сим-карт"""
         return self.__number_of_sim
 
-    @get_sim.setter
-    def get_sim(self, quantity):
+    @number_of_sim.setter
+    def number_of_sim(self, quantity):
         """Проверяем, что число сим-карт не может быть нулевым или меньше."""
         if quantity <= 0:
             raise ValueError('Количество физических SIM-карт должно быть целым числом больше нуля')
