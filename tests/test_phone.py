@@ -1,5 +1,6 @@
 import pytest
 from src.phone import Phone
+from src.item import Item
 
 
 def test_str():
@@ -12,6 +13,8 @@ def test_repr():
     phone1 = Phone("iPhone 14", 120_000, 5, 2)
     assert repr(phone1) == "Phone('iPhone 14', 120000, 5, 2)"
 
-def test_get_sim():
-    pass
-
+def test_number_of_sim():
+    phone1 = Phone("iPhone 14", 120_000, 5, 2)
+    item1 = Item("Смартфон", 10000, 20)
+    assert item1 + phone1 == 25
+    assert phone1 + phone1 == 10
