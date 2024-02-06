@@ -1,3 +1,4 @@
+import pytest
 from src.phone import Phone
 
 
@@ -10,3 +11,7 @@ def test_repr():
     """Проверка вывода информации о товаре"""
     phone1 = Phone("iPhone 14", 120_000, 5, 2)
     assert repr(phone1) == "Phone('iPhone 14', 120000, 5, 2)"
+
+def test_get_sim():
+    pass
+
