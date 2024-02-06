@@ -25,6 +25,14 @@ class Item:
     def __str__(self):
         return self.__name
 
+    def __add__(self, other):
+        """Складываем экземпляры класса родителя и дочерних классов
+        по количеству единиц quantity"""
+        if isinstance(other, Item):
+            return int(self.quantity) + int(other.quantity)
+        else:
+            return None
+
     def calculate_total_price(self) -> float:
         """Рассчитывает общую стоимость конкретного товара в магазине.
         :return: Общая стоимость товара."""
