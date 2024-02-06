@@ -2,6 +2,7 @@
 import pytest
 from src.item import Item
 from config import ITEMS
+from src.phone import Phone
 
 
 def test_calculate_total_price():
@@ -38,9 +39,11 @@ def test_string_to_number():
     assert Item.string_to_number("1.5") == 1
 
 def test_repr():
+    """Проверка вывода информации о товаре"""
     item1 = Item("Смартфон", 10000, 20)
     assert repr(item1) == "Item('Смартфон', 10000, 20)"
 
 def test_str():
+    """Проверка наименования"""
     item1 = Item("Смартфон", 10000, 20)
     assert str(item1) == 'Смартфон'
