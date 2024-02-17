@@ -59,7 +59,13 @@ def test_add():
     assert phone1 + phone1 == 10
 
 
-def test_instantiate_from_csv_not():
+def test_instantiate_from_csv_not_file():
     """Проверяет на наличие файла"""
     with pytest.raises(FileNotFoundError):
         Item.instantiate_from_csv(" ")
+
+
+def test_instantiate_from_csv_error_file():
+    """Проверяет целостность файла и наличие колонок данных"""
+    with pytest.raises(InstantiateCSVError):
+        Item.instantiate_from_csv("../src/items_no_data.csv")
